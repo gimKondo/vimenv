@@ -1,7 +1,4 @@
 --langdef=io
 --langmap=io:.io
---regex-io=/[ \t]+([a-zA-Z0-9_]+)[ \t]*:\=/\1/o,object/
---regex-io=/^[ \t]*([a-zA-Z0-9_]+)[ \t]*:\=/\1/o,object/
---regex-io=/[ \t]+([a-zA-Z0-9_]+)[ \t]*::\=/\1/o,object/
---regex-io=/^[ \t]*([a-zA-Z0-9_]+)[ \t]*::\=/\1/o,object/
+--regex-io=/[ \t]*([a-zA-Z0-9_]+)[ \t]*:{1,2}\=/\1/s,slot/
 

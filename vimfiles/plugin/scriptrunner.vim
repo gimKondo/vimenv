@@ -31,7 +31,11 @@ function! Preview_script_output() range
 	" put current buffer's content in a temp file
 	silent execute ": " . a:firstline . "," . a:lastline . "w " . l:src
 	" open the preview window
-	silent execute ":pedit! " . l:dst
+	if &co > 140
+		silent execute ":vert bel pedit! " . l:dst
+	else
+		silent execute ":pedit! " . l:dst
+	endif
 	" change to preview window
 	wincmd P
 	" set options
@@ -57,11 +61,25 @@ function! Execute_script_on_shell() range
 	endif
 endfunction
 
+" run script on interactive
+function! Execute_script_on_interactive() range
+	if &filetype == "ruby"
+		execute ":!irb " . expand('%')
+	elseif &filetype == "haskell"
+		execute ":!ghci " . expand('%')
+	elseif &filetype == "io"
+		execute ":!io " . expand('%')
+	endif
+endfunction
+
+
 " run script, and output the result
-vmap <silent> <F10> :call Preview_script_output()<CR>
+vmap <silent> <F10> :call Preview_script_output()<CR><C-w>=
 nmap <silent> <F10> mzggVG<F10>`z
 map  <silent> <S-F10> :pc<CR>
 
 " save and run script on shell
 nmap <silent> <C-F10> :w<CR>:call Execute_script_on_shell()<CR>
 
+" save and run script on interactive
+nmap <silent> <C-S-F10> :w<CR>:call Execute_script_on_interactive()<CR>

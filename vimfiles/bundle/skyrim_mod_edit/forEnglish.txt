@@ -1,0 +1,4 @@
+- for English speaker
+this plugin has only Japanese readme.
+if you want to use, please read ".\ftplugin\psc_compiler.vim"
+or contact @gim_kondo by twitter.

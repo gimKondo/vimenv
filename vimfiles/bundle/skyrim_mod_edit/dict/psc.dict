@@ -1,0 +1,15 @@
+Event
+EndEvent
+if
+EndIf
+
+Game
+Debug
+
+OnHit
+GetPlayer
+GetCombatTarget
+Trace
+ObjectReference
+
+

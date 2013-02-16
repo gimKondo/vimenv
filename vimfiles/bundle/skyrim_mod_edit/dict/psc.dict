@@ -1,15 +1,43 @@
+Auto
+elseif
+endIf
 Event
 EndEvent
+extends
 if
-EndIf
+int
+false
+none
+Property
+return
+Scriptname
+self
+true
 
 Game
 Debug
+SPELL
 
+AddSpell
 OnHit
+OnUpdate
 GetPlayer
 GetCombatTarget
+GetNumItems
+GetNthForm
+GetTargetActor
+RandomInt
+RegisterForSingleUpdate
+RemoveItem
 Trace
+
+ActiveMagicEffect
+Actor
+bool
+Form
 ObjectReference
+Projectile
+Spell
+Utility
 
 

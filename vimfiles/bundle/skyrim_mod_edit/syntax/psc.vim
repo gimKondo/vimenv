@@ -14,15 +14,23 @@ syntax case match
 
 " global variable
 syntax keyword pscGlobal Game Debug
+syntax keyword pscGlobal SPELL
 " API
-syntax keyword pscApi OnHit
-syntax keyword pscApi GetPlayer GetCombatTarget
-syntax keyword pscApi MessageBox Trace
+syntax keyword pscApi OnHit OnUpdate
+syntax keyword pscApi AddSpell
+syntax keyword pscApi GetCombatTarget GetNumItems
+syntax keyword pscApi GetNthForm GetPlayer GetTargetActor
+syntax keyword pscApi MessageBox RandomInt RegisterForSingleUpdate
+syntax keyword pscApi RemoveItem Trace
+
 " Built-in Type
-syntax keyword pscType ObjectReference
+syntax keyword pscType ActiveMagicEffect Actor bool Form int
+syntax keyword pscType ObjectReference Projectile 
+syntax keyword pscType Spell Utility
 
 " 
-syntax keyword pscKeyword Event EndEvent if EndIf
+syntax keyword pscKeyword as Auto elseif Event EndEvent false if endIf 
+syntax keyword pscKeyword none Property return self true
 syntax keyword pscKeyword Scriptname extends
 syntax region pscOperator start='[*/>=+-]' end='[ 0-9]'he=e-1
 
@@ -33,6 +41,7 @@ syn match   pscFloat	"\<\d\+[eE][+-]\=\d\+[jJ]\=\>" display
 syn match   pscFloat	"\<\d\+\.\d*\([eE][+-]\=\d\+\)\=[jJ]\=" display
 
 syntax region pscComment start=/{/ end=/}/
+syntax region pscComment start=';' end='$' keepend
 
 highlight link pscGlobal Define
 highlight link pscApi Function

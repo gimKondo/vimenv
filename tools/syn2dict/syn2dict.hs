@@ -1,4 +1,4 @@
-import System
+import System.Environment
 
 {---------------------------------------------------------------
  <summary>
@@ -9,11 +9,11 @@ import System
    arg2 : dictionary file as destination
  ---------------------------------------------------------------}
 main = do
-    args <- getArgs
-    src <- readFile $ getSynPath args
-    let keywords = unlines $ extractKeywords src
-    putStrLn keywords -- for confirming
-    writeFile (getDictPath args) keywords
+	args <- getArgs
+	src <- readFile $ getSynPath args
+	let keywords = unlines $ extractKeywords src
+	putStrLn keywords -- for confirming
+	writeFile (getDictPath args) keywords
 
 ----------------------------------
 -- Main

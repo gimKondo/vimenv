@@ -29,4 +29,6 @@ I have it in mind to add features following.
 
 # history
 
-create : 2013.2.19 by gim_kondo
+- 2013.2.19 created by gim_kondo
+- 2013.2.19 correspond to GHC7.x
+
